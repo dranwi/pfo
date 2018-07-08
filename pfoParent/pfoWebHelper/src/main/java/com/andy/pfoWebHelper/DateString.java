@@ -1,4 +1,4 @@
-package com.andy.pfoModel;
+package com.andy.pfoWebHelper;
 
 public class DateString {
 	String dateString;

@@ -1,8 +1,12 @@
 package com.andy.pfoEjb.vd;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 import javax.enterprise.context.RequestScoped;
+
+import com.andy.pfoWebHelper.StringConverter;
+
 
 @RequestScoped
 public class QuoteDetailVD implements Serializable{
@@ -12,9 +16,20 @@ public class QuoteDetailVD implements Serializable{
 	String year;
 	String month;
 	String day;
+	String currency;
 	String value;
+	StringConverter converter;
 	
-	public QuoteDetailVD() {}
+	public QuoteDetailVD() {
+		LocalDate date = LocalDate.now();
+		Integer y = date.getYear();
+		Integer m = date.getMonthValue();
+		Integer d = date.getDayOfMonth();
+		year = String.valueOf(y);
+		month = String.valueOf(m);
+		day = String.valueOf(d);
+		
+	}
 
 	public String getSymbol() {
 		return Symbol;
@@ -54,6 +69,14 @@ public class QuoteDetailVD implements Serializable{
 
 	public void setValue(String value) {
 		this.value = value;
+	}
+
+	public String getCurrency() {
+		return currency;
+	}
+
+	public void setCurrency(String currency) {
+		this.currency = currency;
 	}
 
 }

@@ -9,10 +9,10 @@ import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import com.andy.pfoModel.DateString;
 import com.andy.pfoModel.Portfolio;
 import com.andy.pfoModel.Purchase;
 import com.andy.pfoModel.Stock;
+import com.andy.pfoWebHelper.DateString;
 import com.andy.pfoEjb.session.StockSession;
 import com.andy.pfoEjb.vd.StockBuyDetailVD;
 

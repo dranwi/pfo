@@ -1,7 +1,6 @@
 package com.andy.pfoWeb;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
@@ -11,6 +10,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.andy.pfoModel.*;
+import com.andy.pfoWebHelper.StringConverter;
 import com.andy.pfoEjb.session.QuoteSession;
 
 @SessionScoped
@@ -46,8 +46,6 @@ public class PortfolioViewBean implements Serializable {
 		tradeItemList = new ArrayList<TradeItem>();
 		Double pfoTotalTradeSum = 0.0;
 		Double pfoTotalPresSum = 0.0;
-		Double pfoTotalProfit = 0.0;
-		Double pfoTotalMargin = 0.0;
 		Integer color = 1;
 
 		for (Stock s : stockList) {
@@ -92,7 +90,7 @@ public class PortfolioViewBean implements Serializable {
 				item.setTradeQuote(tradeQuote);
 
 				// PresQuote
-				String today = this.todayString();
+				String today = converter.todayString();
 				if (!presQuoteFound) {
 					presQuote = this.findQuote(s.getName(), today);
 					presQuoteFound = true;
@@ -214,17 +212,6 @@ public class PortfolioViewBean implements Serializable {
 		for(TradeItem item : tradeItemList) {
 			item.setColor(color);
 		}
-	}
-	
-	String todayString() {
-		LocalDate date = LocalDate.now();
-
-		String year = String.valueOf(date.getYear());
-		String month = String.valueOf(date.getMonthValue());
-		String day = String.valueOf(date.getDayOfMonth());
-		
-		DateString dateString =  new DateString(year, month, day);
-		return dateString.getString();
 	}
 	
 	Double findQuote(String symbol, String date) {

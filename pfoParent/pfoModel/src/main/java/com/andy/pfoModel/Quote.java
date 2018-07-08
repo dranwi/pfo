@@ -20,7 +20,6 @@ public class Quote {
 	String symbol;
 	
 	@Column(name="DATUM")
-	//@Temporal(value=TemporalType.DATE)
 	String date;
 	
 	@Column(name="VALUE")
