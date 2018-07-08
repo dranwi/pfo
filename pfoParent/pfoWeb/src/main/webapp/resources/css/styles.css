@@ -1,0 +1,115 @@
+		
+					
+.stocks {
+				width: 90%;
+				border-collapse: collapse;
+				border: 1px solid #000;
+			}
+
+.stocksHeader {
+				padding: 3px;
+				text-align: center;
+				background: White;
+				font-style: italic;
+				border: 1px solid #BBBBBB;			
+				}	
+
+.stocksFooter {
+			padding: 3px;
+			text-align: right;
+			font-weight: bold;
+			background: Pink;
+			border: 1px solid #BBBBBB;
+		}							
+		
+.g 		{	
+			padding: 3px;
+			text-align: right;
+			background: LightGreen;
+			border: 1px solid #BBBBBB;
+		}
+		
+.y 		{	
+			padding: 3px;
+			text-align: right;
+			background: Yellow;
+			border: 1px solid #BBBBBB;
+		}	
+.p 		{	
+			padding: 3px;
+			text-align: right;
+			background: LightGrey;
+			border: 1px solid #BBBBBB;
+		}						
+		
+		
+.column1 {
+			border: 1px solid #BBBBBB;
+			text-align: right;
+		}
+.column2	{
+			border: 1px solid #BBBBBB;
+			text-align: right;
+		}	
+.column3 {
+			font-weight:bold;
+			border: 1px solid #BBBBBB;
+			text-align: right;
+		}
+.column4	{
+			border: 1px solid #BBBBBB;
+			text-align: right;
+		}		
+.column5 {
+			border: 1px solid #BBBBBB;
+			text-align: right;
+		}
+.column6	{
+			font-weight:bold;
+			border: 1px solid #BBBBBB;
+			text-align: right;
+		}	
+.column7 {
+			border: 1px solid #BBBBBB;
+			text-align: right;
+		}
+.column8	{
+			border: 1px solid #BBBBBB;
+			text-align: right;
+		}	
+.column9 {
+			border: 1px solid #BBBBBB;
+			text-align: right;
+		}
+.column10 {
+			font-weight:bold;
+			border: 1px solid #BBBBBB;
+			text-align: right;
+		}	
+.column11 {
+			border: 1px solid #BBBBBB;
+			text-align: right;
+		}
+.column12	{
+			font-weight:bold;
+			border: 1px solid #BBBBBB;
+			text-align: right;
+		}	
+.column13 {
+			border: 1px solid #BBBBBB;
+			text-align: right;
+		}
+.column14	{
+			border: 1px solid #BBBBBB;
+			text-align: right;
+		}	
+.column15 {
+			font-weight:bold;
+			border: 1px solid #BBBBBB;
+			text-align: right;
+		}
+.column16	{
+			font-weight:bold;
+			border: 1px solid #BBBBBB;
+			text-align: right;
+		}

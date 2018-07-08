@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+	<h:head>
+		<title>quoteList</title>
+	</h:head>
+	<h:body>
+		<h:form>
+			<p></p>
+			<h:dataTable  value="#{QuoteListBean.quoteList}" var="quote"
+				styleClass="stocks"
+				headerClass="stocksHeader"
+				rowClasses="whiteRow">
+				
+				
+				<h:column headerClass="stocksHeader">
+					<f:facet name="header">Symbol</f:facet>
+					#{quote.symbol}				
+				</h:column>
+								
+				<h:column headerClass="stocksHeader">
+					<f:facet name="header">Date</f:facet>
+					#{quote.date}				
+				</h:column>
+				
+				<h:column headerClass="customersHeader">
+					<f:facet name="header">Value</f:facet>
+					#{quote.value}
+				</h:column>
+			</h:dataTable>		
+			<p>		
+				<h:commandButton value="Return" action="index" />
+			</p>
+		</h:form>		
+	</h:body>
+</html>
