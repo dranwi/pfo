@@ -37,6 +37,13 @@ public class PortfolioViewBean implements Serializable {
 
 	public PortfolioViewBean() {
 		converter = new StringConverter();
+		
+	}
+	
+	public String getTableTitel() {		
+		portfolio = pfoManageBean.getSelectedPortfolio();
+		String tableTitel = "Portfolio " + portfolio.getName() + " on " + converter.todayString();
+		return tableTitel;
 	}
 	
 	public List<TradeItem> getTradeItemList() {
@@ -101,7 +108,7 @@ public class PortfolioViewBean implements Serializable {
 				// TradeSum
 				Double amountD = new Double(item.getAmount());
 				Double tradeSum = amountD * t.getQuote();
-				String tradeSumString = converter.fromDouble(tradeSum);
+				String tradeSumString = converter.fromInteger(tradeSum.intValue());
 				item.setTradeSum(tradeSumString);
 
 				totalTradeSum = totalTradeSum + tradeSum;
@@ -109,7 +116,7 @@ public class PortfolioViewBean implements Serializable {
 
 				// PresSum
 				Double presSum = amountD * presQuote;
-				String presSumString = converter.fromDouble(presSum);
+				String presSumString = converter.fromInteger(presSum.intValue());
 				item.setPresSum(presSumString);
 
 				totalPresSum = totalPresSum + presSum;
@@ -117,7 +124,7 @@ public class PortfolioViewBean implements Serializable {
 
 				// Profit
 				Double profit = presSum - tradeSum;
-				String profitString = converter.fromDouble(profit);
+				String profitString = converter.fromInteger(profit.intValue());
 				item.setProfit(profitString);
 
 				// Margin
@@ -144,14 +151,14 @@ public class PortfolioViewBean implements Serializable {
 			String totalAmountString = converter.fromInteger(totalAmount);
 			firstItem.setTotalAmount(totalAmountString);
 
-			String totalTradeSumString = converter.fromDouble(totalTradeSum);
+			String totalTradeSumString = converter.fromInteger(totalTradeSum.intValue());
 			firstItem.setTotalTradeSum(totalTradeSumString);
 
-			String totalPresSumString = converter.fromDouble(totalPresSum);
+			String totalPresSumString = converter.fromInteger(totalPresSum.intValue());
 			firstItem.setTotalPresSum(totalPresSumString);
 
 			totalProfit = totalPresSum - totalTradeSum;
-			String totalProfitString = converter.fromDouble(totalProfit);
+			String totalProfitString = converter.fromInteger(totalProfit.intValue());
 			firstItem.setTotalProfit(totalProfitString);
 
 			totalMargin = totalProfit / totalTradeSum;

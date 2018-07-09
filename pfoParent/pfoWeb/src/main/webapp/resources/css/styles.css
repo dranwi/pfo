@@ -5,6 +5,9 @@
 				border-collapse: collapse;
 				border: 1px solid #000;
 			}
+.stocksCaption {
+				font-weight: bold;
+}
 
 .stocksHeader {
 				padding: 3px;

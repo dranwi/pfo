@@ -12,11 +12,13 @@
 			<p></p>
 			<h:dataTable  value="#{PortfolioViewBean.tradeItemList}" var="item"
 				styleClass="stocks"
+				captionClass="stocksCaption"
 				headerClass="stocksHeader"
 				rowClasses="#{PortfolioViewBean.rowClasses}"
 				footerClass="stocksFooter"
 				columnClasses="column1, column2, column3, column4, column5, column6, column7, column8, column9, column10, column11, column12, column13, column14, column15, column16">
 				
+				<f:facet name="caption"  >#{PortfolioViewBean.tableTitel}   </f:facet>
 				
 				<h:column headerClass="stocksHeader">
 					<f:facet name="header">Date</f:facet>

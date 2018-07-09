@@ -4,6 +4,7 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.util.Locale;
+import java.util.Objects;
 import java.util.logging.Logger;
 
 
@@ -30,13 +31,16 @@ public class StringConverter {
 		nf.setMinimumFractionDigits(2);
 		nf.setMaximumFractionDigits(2);
 		String stringMargin = nf.format(margin);
+		logger.info("Margin when 0: " + stringMargin);
+		if(Objects.isNull(stringMargin) ||  stringMargin.length() <= 2) {
+			stringMargin = "0,00";
+			logger.info("Margin when 0 and adjusted: " + stringMargin);
+		}
 		return stringMargin + "%";
 	}
 	
 	public Double toDouble(String value) {
 		NumberFormat nf = NumberFormat.getInstance(Locale.GERMAN);
-		//DecimalFormat df = (DecimalFormat)nf;
-		//df.applyPattern("####,##");
 		Number number;
 		try {
 			number = nf.parse(value);			
