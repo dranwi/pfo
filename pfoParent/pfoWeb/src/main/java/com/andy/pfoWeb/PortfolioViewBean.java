@@ -122,6 +122,9 @@ public class PortfolioViewBean implements Serializable {
 
 				// Margin
 				Double margin = profit / tradeSum;
+				if(t instanceof Sale) {
+					margin = margin * (-1.0);
+				}
 				String stringMargin = converter.fromMargin(margin);
 				item.setMargin(stringMargin);
 

@@ -4,6 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html">
 	<h:head>
+		<h:outputStylesheet library="css"  name="quoteStyles.css" />	
 		<title>quoteList</title>
 	</h:head>
 	<h:body>
@@ -12,6 +13,7 @@
 			<h:dataTable  value="#{QuoteListBean.quoteList}" var="quote"
 				styleClass="stocks"
 				headerClass="stocksHeader"
+				columnClasses="column1, column2, column3"
 				rowClasses="whiteRow">
 				
 				

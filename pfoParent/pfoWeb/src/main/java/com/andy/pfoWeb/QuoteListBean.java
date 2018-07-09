@@ -2,9 +2,9 @@ package com.andy.pfoWeb;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
@@ -48,17 +48,19 @@ public class QuoteListBean implements Serializable {
 	}
 	
 	
-	public List<Quote> getQuoteList() {
+	public List<QuoteItem> getQuoteList() {
 		if (selectedSymbol == null) {
-			return new ArrayList<Quote>();
+			return new ArrayList<QuoteItem>();
 		}
-		List<Quote> quoteList = new ArrayList<Quote>();
+		List<QuoteItem> quoteList = new ArrayList<QuoteItem>();
 		Stock stock = stockSession.findByNameWithTimeline(selectedSymbol);
 		Map<String,Double> timeline = stock.getTimelineQuote();
-		Set<String> keyList = timeline.keySet();
+		List<String> keyList = new ArrayList<String>(timeline.keySet());
+		keyList.sort(Comparator.naturalOrder());
 		for(String date : keyList) {
 			Quote q = new Quote(selectedSymbol, date, timeline.get(date));
-			quoteList.add(q);
+			QuoteItem item = new QuoteItem(q);
+			quoteList.add(item);
 		}
 		return quoteList;
 	}
